@@ -1,0 +1,162 @@
+.trend {
+  padding: 60px 0;
+
+  width: 100%;
+}
+
+.trend__inner {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.trend__header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.trend__title {
+  width: 25%;
+  font-size: 44px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: black;
+
+  margin-right: 10px;
+
+  &--popular{
+    width: 35%;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 22px;
+  }
+}
+
+.trend__line {
+  width: 75%;
+  height: 1px;
+
+  background: #ADADAD;
+
+  &--popular{
+    width: 65%;
+  }
+}
+
+.trend__content {
+  display: flex;
+  width: 100%;
+  //justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: 550px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+}
+
+.trend__item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 15px;
+  margin-right: 10px;
+
+  &:last-child{
+    margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 48%;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.trend__topic {
+  color: #219FFF;
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+
+  margin-bottom: 5px;
+
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: #161616;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 550px) {
+   font-size: 22px;
+  }
+}
+
+.trend__text {
+  color: #161616;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+
+  text-decoration: none;
+
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  background-position: 0 35px;
+
+  transition: background 0.5s linear;
+
+  &:hover{
+    background-size: 100% 100%;
+  }
+
+  &--underline{
+    background-image: linear-gradient(to right, #161616 0, #161616 100%);
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 26px;
+    background-position: 0 30px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 23px;
+    background-position: 0 26px;
+  }
+}
+
+.trend__date {
+  color: #939393;
+  font-size: 26px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 20px;
+  }
+}

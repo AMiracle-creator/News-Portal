@@ -1,0 +1,77 @@
+.header {
+  width: 100%;
+  background: #161616;
+
+  padding: 25px 0;
+  position: relative;
+}
+
+.header__inner {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+     justify-content: space-between;
+  }
+}
+
+.header__logo{
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+    font-family: "Tenali Ramakrishna", sans-serif;
+    color: white;
+
+    width: 50%;
+  }
+}
+
+.header__auth {
+  width: 25%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+
+  &:hover {
+    .header__auth-logo {
+      fill: #939393;
+    }
+
+    .header__auth-text {
+      color: #939393;
+    }
+  }
+}
+
+.active{
+  display: flex;
+}
+
+.header__auth-logo {
+  width: 25px;
+  height: 25px;
+
+  fill: white;
+
+  margin-top: -9px;
+
+  transition: color 0.2s linear;
+}
+
+.header__auth-text {
+  color: white;
+  font-family: "Tenali Ramakrishna", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+
+  transition: color 0.2s linear;
+}

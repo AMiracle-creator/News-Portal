@@ -1,0 +1,77 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 45
+  Date: 29.09.2020
+  Time: 21:55
+  To change this template use File | Settings | File Templates.
+--%>
+<div class="about__intro">
+    <div class="about__bg">
+        <img src="img/about/title.jpg" alt="" class="about__img">
+        <div class="about__title-info">
+            <div class="about__title wow fadeInDown">About us</div>
+            <div class="about__subtitle wow fadeInUp">why are we</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="about__inner">
+            <div class="about__header">
+                <div class="about__line"></div>
+                <div class="about__header-title">Why are you here</div>
+                <div class="about__line"></div>
+            </div>
+
+            <div class="about__content">
+                <div class="about__item-bg">
+                    <img src="img/about/post-2-copyright.jpg" alt="" class="item-bg">
+                    <div class="about__item-bg-text">New skills that will help and reveal you</div>
+                </div>
+                <div class="about__items">
+                    <div class="about__item-sm">
+                        <img src="img/about/photograph.jpg" alt="" class="item-sm">
+                        <div class="about__item-sm-text">Worlds you didn't even know existed</div>
+                    </div>
+                    <div class="about__item-sm">
+                        <img src="img/about/machina.jpg" alt="" class="item-sm">
+                        <div class="about__item-sm-text">New experience and knowledge</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about__content about__content-new">
+                <div class="about__item-bg">
+                    <img src="img/about/twopeople.jpg" alt="" class="item-bg">
+                    <div class="about__item-bg-text">Dating and thoughts with like-minded people</div>
+                </div>
+                <div class="about__items">
+                    <div class="about__item-sm">
+                        <img src="img/about/girl.jpg" alt="" class="item-sm">
+                        <div class="about__item-sm-text">Eternal and unforgettable stories</div>
+                    </div>
+                    <div class="about__item-sm">
+                        <img src="img/about/meet.jpg" alt="" class="item-sm">
+                        <div class="about__item-sm-text">Find a new self</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about__video">
+                <div class="video__inner">
+                    <video class="video" src="img/video/coverr--07-20-friends-at-sunset-25-5167.mp4" muted loop
+                           autoplay></video>
+                </div>
+
+                <div class="video__content">
+                    <div class="video__info">
+                        <div class="video__title wow fadeInDown">Jatal</div>
+                        <div class="video__text wow fadeInLeft">it's time to write your own story</div>
+
+                        <a href="#" class="video__button wow fadeInRight">Write post</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,131 @@
+.modal__close {
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0;
+  cursor: pointer;
+
+  background: none;
+  border: 0;
+
+  position: absolute;
+  top: -2.2rem;
+  right: -2.2rem;
+  z-index: 1;
+
+  transition: transform 0.4s linear;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 568px) {
+    right: 0;
+  }
+}
+
+
+.modal__close-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  fill: white;
+}
+
+.modal__title {
+  margin-bottom: 0.5rem;
+
+  font-size: 24px;
+  color: #E83E8C;
+  font-weight: 500;
+}
+
+.modal__name {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.input {
+  display: block;
+  width: 100%;
+  height: 45px;
+  padding: 1rem 1.8rem;
+  margin-bottom: 1.3rem;
+
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  font-family: inherit;
+  font-size: 1rem;
+  color: black;
+  font-weight: 500;
+
+  &::placeholder {
+    color: #7b7b7b;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: #E83E8C;
+  }
+}
+
+.modal__textarea {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__text {
+  width: 100%;
+  resize: none;
+  height: 150px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+
+  margin-bottom: 20px;
+
+  &:focus {
+    outline: 0;
+    border-color: #E83E8C;
+  }
+}
+
+.btn{
+  display: inline-block;
+  vertical-align: top;
+
+  background: none;
+  border: 0;
+  border-radius: 5px;
+
+  padding: 1rem 2rem;
+
+  font-family: inherit;
+  font-size: 1rem;
+  color: black;
+  line-height: 1.1;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: background 0.3s linear,
+  color 0.3s linear;
+
+  &--pink{
+    border: 2px solid #E83E8C;
+
+    &:hover{
+      background-color: #E83E8C;
+      color: white;
+    }
+
+    &:focus{
+      outline: 0;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.nav {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+     display: none;
+  }
+}
+
+.nav__link {
+  margin-left: 15px;
+
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "Tenali Ramakrishna", sans-serif;
+  color: white;
+
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: #939393;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+
+  &--logo {
+    font-size: 45px;
+    font-family: "Tenali Ramakrishna", sans-serif;
+    margin-left: 15px;
+    color: white;
+    cursor: default;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+
+    &--logo{
+      display: none;
+    }
+  }
+}
+
+.see-nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #161616;
+  z-index: 1;
+
+  & .nav__link{
+    display: flex;
+    margin-left: 0;
+  }
+}

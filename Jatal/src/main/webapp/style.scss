@@ -1,0 +1,57 @@
+html {
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+
+  background: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: black;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Blocks*/
+@import "styles/preloader";
+@import "styles/header";
+@import "styles/container";
+@import "styles/nav";
+@import "styles/burger";
+@import "styles/intro";
+@import "styles/trend";
+@import "styles/popular";
+@import "styles/latenews";
+@import "styles/btn";
+@import "styles/footer";
+@import "styles/posts";
+@import "styles/singpost";
+@import "styles/comments";
+@import "styles/modal";
+@import "styles/about";
+@import "styles/contacts";
+@import "styles/login";
+@import "styles/auth";
+@import "styles/cabinet";
+@import "styles/personal-allposts";
+@import "styles/subscibe";
+@import "styles/writepost";
+
+
+//Bootstrap
+@import "styles/bootstap/scss/mixins";
+@import "styles/bootstap/scss/functions";
+@import "styles/bootstap/scss/variables";
+@import "styles/bootstap/scss/modal";
