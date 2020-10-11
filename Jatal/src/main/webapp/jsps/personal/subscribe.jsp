@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <div class="cabinet">
-    <div class="cabinet__bg allpost-bg">
+    <div class="cabinet__bg">
         <img src="img/cabinet/bg-cabinet.jpg" alt="" class="cabinet__img">
     </div>
     <div class="container">

@@ -9,6 +9,10 @@
   overflow: hidden;
 
   background: #362f2d;
+
+  @media (max-width: 998px) {
+    height: 133vh;
+  }
 }
 
 .cabinet__img {
@@ -49,6 +53,10 @@
   display: flex;
   align-items: center;
   width: 100%;
+
+  @media (max-width: 580px) {
+   flex-wrap: wrap;
+  }
 }
 
 .cabinet__logo {
@@ -58,6 +66,11 @@
   font-family: 'La Belle Aurore', sans-serif;
   font-size: 54px;
   color: #fff;
+
+  @media (max-width: 680px) {
+    font-size: 40px;
+  }
+
 }
 
 .cabinet__nav {
@@ -84,6 +97,21 @@
   &:hover {
     background: darken(white, 20%);
   }
+
+  @media (max-width: 910px) {
+    font-size: 10px;
+    padding: 8px 20px;
+  }
+
+  @media (max-width: 680px) {
+    padding: 8px 10px;
+  }
+
+  @media (max-width: 580px) {
+    margin-bottom: 10px;
+  }
+
+
 }
 
 .cabinet__content {
@@ -96,6 +124,10 @@
 
   background: white;
   border-right: 6px;
+
+  @media (max-width: 560px) {
+   width: 100%;
+  }
 }
 
 .cabinet__content-header {
@@ -120,6 +152,10 @@
 
     background: #BAB8B8;
   }
+
+  @media (max-width: 420px) {
+    flex-direction: column;
+  }
 }
 
 .profile {
@@ -128,6 +164,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 420px) {
+    order: 2;
+    width: 100%;
+  }
 }
 
 .profile__content-info {
@@ -136,6 +177,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 420px) {
+    order: 1;
+    width: 100%;
+  }
 }
 
 .profile__photo {
@@ -143,6 +189,12 @@
   height: 150px;
 
   margin-bottom: 10px;
+
+  @media (max-width: 680px) {
+   width: 100px;
+    height: 100px;
+  }
+
 }
 
 .cabin__img {
@@ -169,18 +221,32 @@
   &:hover {
     background: darken(#EAD1D1, 10%);
   }
+
+  @media (max-width: 680px) {
+    padding: 5px 10px;
+  }
+
 }
 
 .info__title {
   font-size: 50px;
   color: #FA8282;
   font-family: "Quattrocento", sans-serif;
+
+  @media (max-width: 680px) {
+    font-size: 30px;
+  }
+
 }
 
 .info__subtitle {
   font-size: 25px;
   color: #645F5F;
   font-family: 'La Belle Aurore', sans-serif;
+
+  @media (max-width: 680px) {
+    font-size: 16px;
+  }
 
 }
 
@@ -196,6 +262,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 680px) {
+    justify-content: inherit;
+    flex-direction: column;
+  }
 }
 
 .personal__info-inner {
@@ -204,6 +275,11 @@
   flex-direction: column;
 
   margin: 0 70px;
+
+  @media (max-width: 680px) {
+    margin: 0;
+    width: 68%;
+  }
 }
 
 .personal__info-fieldname {

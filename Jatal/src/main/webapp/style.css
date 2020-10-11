@@ -2029,6 +2029,9 @@ ul {
   height: 100%;
   overflow: hidden;
   background: #362f2d; }
+  @media (max-width: 998px) {
+    .cabinet__bg {
+      height: 133vh; } }
 
 .cabinet__img {
   width: 100%;
@@ -2058,6 +2061,9 @@ ul {
   display: flex;
   align-items: center;
   width: 100%; }
+  @media (max-width: 580px) {
+    .cabinet__nav {
+      flex-wrap: wrap; } }
 
 .cabinet__logo {
   width: 26%;
@@ -2065,6 +2071,9 @@ ul {
   font-family: 'La Belle Aurore', sans-serif;
   font-size: 54px;
   color: #fff; }
+  @media (max-width: 680px) {
+    .cabinet__logo {
+      font-size: 40px; } }
 
 .cabinet__nav {
   width: 85%;
@@ -2083,6 +2092,16 @@ ul {
     margin-right: 0; }
   .cabinet__link:hover {
     background: #cccccc; }
+  @media (max-width: 910px) {
+    .cabinet__link {
+      font-size: 10px;
+      padding: 8px 20px; } }
+  @media (max-width: 680px) {
+    .cabinet__link {
+      padding: 8px 10px; } }
+  @media (max-width: 580px) {
+    .cabinet__link {
+      margin-bottom: 10px; } }
 
 .cabinet__content {
   width: 85%;
@@ -2092,6 +2111,9 @@ ul {
   margin: 0 auto;
   background: white;
   border-right: 6px; }
+  @media (max-width: 560px) {
+    .cabinet__content {
+      width: 100%; } }
 
 .cabinet__content-header {
   width: 100%;
@@ -2109,6 +2131,9 @@ ul {
     width: 100%;
     height: 2px;
     background: #BAB8B8; }
+  @media (max-width: 420px) {
+    .cabinet__content-header {
+      flex-direction: column; } }
 
 .profile {
   width: 30%;
@@ -2116,6 +2141,10 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 420px) {
+    .profile {
+      order: 2;
+      width: 100%; } }
 
 .profile__content-info {
   width: 70%;
@@ -2123,11 +2152,19 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 420px) {
+    .profile__content-info {
+      order: 1;
+      width: 100%; } }
 
 .profile__photo {
   width: 150px;
   height: 150px;
   margin-bottom: 10px; }
+  @media (max-width: 680px) {
+    .profile__photo {
+      width: 100px;
+      height: 100px; } }
 
 .cabin__img {
   width: 100%;
@@ -2147,16 +2184,25 @@ ul {
   cursor: pointer; }
   .profile__change:hover {
     background: #daaeae; }
+  @media (max-width: 680px) {
+    .profile__change {
+      padding: 5px 10px; } }
 
 .info__title {
   font-size: 50px;
   color: #FA8282;
   font-family: "Quattrocento", sans-serif; }
+  @media (max-width: 680px) {
+    .info__title {
+      font-size: 30px; } }
 
 .info__subtitle {
   font-size: 25px;
   color: #645F5F;
   font-family: 'La Belle Aurore', sans-serif; }
+  @media (max-width: 680px) {
+    .info__subtitle {
+      font-size: 16px; } }
 
 .personal__info {
   display: flex;
@@ -2169,12 +2215,20 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 680px) {
+    .personal__info-item {
+      justify-content: inherit;
+      flex-direction: column; } }
 
 .personal__info-inner {
   display: flex;
   width: 30%;
   flex-direction: column;
   margin: 0 70px; }
+  @media (max-width: 680px) {
+    .personal__info-inner {
+      margin: 0;
+      width: 68%; } }
 
 .personal__info-fieldname {
   border: 2px solid #988C8C;
