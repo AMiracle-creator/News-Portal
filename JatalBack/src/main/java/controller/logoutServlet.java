@@ -16,7 +16,7 @@ public class logoutServlet extends HttpServlet {
         if(session!=null) {
             session.invalidate();
             request.setAttribute("error", "You have logged out successfully");
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.ftl");
             requestDispatcher.forward(request, response);
             System.out.println("Logged out");
         }

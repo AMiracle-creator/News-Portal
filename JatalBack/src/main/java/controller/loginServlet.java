@@ -37,7 +37,7 @@ public class loginServlet extends HttpServlet {
         else
         {
             request.setAttribute("error", userLogin);
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/index.ftl").forward(request, response);
         }
     }
 }

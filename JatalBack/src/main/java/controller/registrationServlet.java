@@ -26,7 +26,7 @@ public class registrationServlet extends HttpServlet {
         }
         else {
             request.setAttribute("errMessage", userRegistered);
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/index.ftl").forward(request, response);
         }
     }
 }
