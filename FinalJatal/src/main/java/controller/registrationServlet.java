@@ -16,7 +16,6 @@ public class registrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("username");
         String password = request.getParameter("password");
-        System.out.println(name);
 
         User user = new User(name, password);
         user.setName(name);
@@ -26,11 +25,11 @@ public class registrationServlet extends HttpServlet {
         String userRegistered = registerDao.registerUser(user);
 
         if(userRegistered.equals("SUCCESS")) {
-            request.getRequestDispatcher("/FinalJatal_war/home").forward(request, response);
+            response.sendRedirect("/FinalJatal_war/home");
         }
         else {
             //request.setAttribute("errMessage", userRegistered);
-            request.getRequestDispatcher("/FinalJatal_war/registration").forward(request, response);
+            request.getRequestDispatcher("templates/authoriz.ftl").forward(request, response);
         }
     }
 }
