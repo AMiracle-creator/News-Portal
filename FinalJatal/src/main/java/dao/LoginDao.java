@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class LoginDao {
-    public String authenticateUser(User user) throws SQLException {
+    public User authenticateUser(User user) {
         String name = user.getName();
         String password = user.getPassword();
 
@@ -17,25 +17,29 @@ public class LoginDao {
         Statement statement = null;
         ResultSet resultSet = null;
 
-        String nameInDB = "";
-        String passwordInDB = "";
+        String nameDB = "";
+        String passwordDB = "";
 
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("select name,password from user");
+            resultSet = statement.executeQuery("select * from user");
             while(resultSet.next()) {
-                nameInDB = resultSet.getString("name");
-                passwordInDB = resultSet.getString("password");
+                nameDB = resultSet.getString("name");
+                passwordDB = resultSet.getString("password");
 
-                if(name.equals(nameInDB) && password.equals(passwordInDB)) {
-                    return "SUCCESS";
+                if(name.equals(nameDB) && password.equals(passwordDB)) {
+                    User user1 = new User();
+                    user1.setName(nameDB);
+                    user1.setPassword(passwordDB);
+                    user1.setId(resultSet.getInt("user_id"));
+                    return user1;
                 }
             }
         }
         catch(SQLException e) {
             e.printStackTrace();
         }
-        return "Invalid user";
+        return null;
     }
 }

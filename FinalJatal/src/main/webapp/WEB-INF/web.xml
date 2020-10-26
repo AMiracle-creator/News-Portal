@@ -178,4 +178,14 @@
         <servlet-name>personalPostsServlet</servlet-name>
         <url-pattern>/your_posts</url-pattern>
     </servlet-mapping>
+    
+    <filter>
+        <filter-name>authorizationFilter</filter-name>
+        <filter-class>utility.authorizationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>authorizationFilter</filter-name>
+        <url-pattern>/authorization</url-pattern>
+    </filter-mapping>
 </web-app>

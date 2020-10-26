@@ -1,6 +1,8 @@
 package controller;
 
 import dao.LoginDao;
+import dao.RegisterDao;
+import javafx.scene.paint.RadialGradient;
 import model.User;
 
 import java.io.IOException;
@@ -19,31 +21,27 @@ public class loginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("username");
         String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        String secondPas = request.getParameter("secpassw");
 
-        User user = new User(name, password);
+        User user = new User();
         user.setName(name);
         user.setPassword(password);
+        user.setEmail(email);
+        RegisterDao dao = new RegisterDao();
 
-        LoginDao loginDao = new LoginDao();
+        String chek = dao.registerUser(user);
 
-        String userLogin = null;
-        try {
-            userLogin = loginDao.authenticateUser(user);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
 
-        assert userLogin != null;
-        if(userLogin.equals("SUCCESS"))
+        if(chek.equals("SUCCESS"))
         {
             System.out.println("Success");
-//            request.setAttribute("name", name);
-            response.sendRedirect("/FinalJatal_war/personalcab");
+            request.getRequestDispatcher("templates/login2.ftl").forward(request,response);
         }
         else
         {
-//            request.setAttribute("error", userLogin);
-            request.getRequestDispatcher("templates/login2.ftl").forward(request, response);
+            request.setAttribute("errMsg","failed");
+            response.sendRedirect(request.getContextPath() + "/registration");
         }
     }
 }

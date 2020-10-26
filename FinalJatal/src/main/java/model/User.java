@@ -1,20 +1,24 @@
 package model;
 
 public class User {
-    private String id;
+    private Integer id;
     private String name;
     private String password;
+    private String email;
 
-    public User(String name, String password) {
-        this.name = name;
-        this.password = password;
+    public String getEmail() {
+        return email;
     }
 
-    public String getId() {
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

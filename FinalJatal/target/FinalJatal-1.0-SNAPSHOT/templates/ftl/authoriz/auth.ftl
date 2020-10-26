@@ -7,10 +7,15 @@
     <div class="login__inner auth__inner">
         <div class="auth__title">Create account</div>
 
-        <form action="" method="post" class="auth__auth">
+        <form action="/FinalJatal_war/login" method="post" class="auth__auth">
             <div class="auth__item">
-                <label for="email">Email Address or Username</label>
-                <input type="text" id="email" class="auth__email" name="username">
+                <label for="email">Email Address</label>
+                <input type="text" id="email" class="auth__email" name="email">
+            </div>
+
+            <div class="auth__item">
+                <label for="name">Email Address or Username</label>
+                <input type="text" id="name" class="auth__email" name="username">
             </div>
 
             <div class="auth__item">
@@ -18,20 +23,12 @@
                 <input type="password" id="password" class="auth__email" name="password">
             </div>
 
-<#--            <div class="auth__item">-->
-<#--                <label for="ret-password">Return password</label>-->
-<#--                <input type="email" id="ret-password" class="auth__email">-->
-<#--            </div>-->
-
-            <div class="auth__item auth__item-remem">
-                <div class="auth__remember">
-                    <input type="checkbox" class="auth__check">
-                    <div class="auth__remember-text">Remember me</div>
-                </div>
-                <form class="auth__create" action="/FinalJatal_war/registration">
-                    <button type="submit" class="auth__btn">Create</button>
-                </form>
+            <div class="auth__item">
+                <label for="password">Repeat password</label>
+                <input type="password" id="password" class="auth__email" name="secpassw">
             </div>
+
+            <button type="submit" class="auth__btn">Create</button>
         </form>
 
     </div>
