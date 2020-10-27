@@ -18,9 +18,20 @@
                 <input type="password" id="password" class="auth__email"
                        required name="password">
             </div>
-            <input type = "checkbox" id = "cookie" name="cookie" value = "yes">
-            <label for="cookie">Запомнить меня</label>
-            <input class="button" type="submit" value="Войти">
+            <div class="auth__item auth__item-remem">
+                <div class="auth__remember">
+                    <input type="checkbox" id="cookie" name="cookie" class="auth__check">
+                    <div class="auth__remember-text">Запомнить меня</div>
+                </div>
+                <div class="auth__create">
+                    <button type="submit" class="auth__btn">Login</button>
+                </div>
+            </div>
+<#--            <div class="auth_item">-->
+<#--                <input type = "checkbox" id="cookie" name="cookie" value = "yes">-->
+<#--                <label for="cookie">Запомнить меня</label>-->
+<#--            </div>-->
+<#--            <button class="button" type="submit">Войти</button>-->
         </form>
     </div>
 </div>

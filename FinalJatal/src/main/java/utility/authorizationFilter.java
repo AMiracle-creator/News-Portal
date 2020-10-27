@@ -32,7 +32,7 @@ public class authorizationFilter implements Filter {
         final HttpSession session = req.getSession();
 
         if(user != null) {
-            if(req.getParameter("cookie").equals("yes")){
+            if(req.getParameter("cookie") != null){
                 System.out.println("asd");
                 Cookie cook1 = new Cookie("username",user.getName());
                 Cookie cook2 = new Cookie("password",user.getPassword());

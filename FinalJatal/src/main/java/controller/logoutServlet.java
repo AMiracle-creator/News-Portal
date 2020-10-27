@@ -3,22 +3,24 @@ package controller;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
 public class logoutServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Cookie[] cookies = req.getCookies();
 
-        if(session!=null) {
-            session.invalidate();
-            request.setAttribute("error", "You have logged out successfully");
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.ftl");
-            requestDispatcher.forward(request, response);
-            System.out.println("Logged out");
+        if (cookies != null){
+            for (Cookie cookie : cookies) {
+                cookie.setValue("");
+                cookie.setMaxAge(0);
+                resp.addCookie(cookie);
+            }
+
+            req.getSession().setAttribute("user", "");
+            req.setAttribute("user", "");
         }
+
+        resp.sendRedirect("/FinalJatal_war/home");
     }
 }

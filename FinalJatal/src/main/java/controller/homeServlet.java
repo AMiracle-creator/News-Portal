@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class homeServlet extends HttpServlet {
     @Override
@@ -23,15 +22,12 @@ public class homeServlet extends HttpServlet {
         for(Cookie cookie : cookies){
             if(cookie.getName().equals("username")){
                 name = cookie.getValue();
-                System.out.println("+");
             }
             else if(cookie.getName().equals("password")){
                 password = cookie.getValue();
-                System.out.println("+");
             }
             else if(cookie.getName().equals("id")){
                 id = cookie.getValue();
-                System.out.println("+");
             }
         }
 
@@ -41,7 +37,6 @@ public class homeServlet extends HttpServlet {
             user.setName(name);
             user.setPassword(password);
             user.setId(Integer.parseInt(id));
-            String userLogin = null;
             user = loginDao.authenticateUser(user);
             req.getSession().setAttribute("user", user);
             req.setAttribute("user", user);

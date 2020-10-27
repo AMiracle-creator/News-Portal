@@ -5,6 +5,9 @@ public class User {
     private String name;
     private String password;
     private String email;
+    private String info = "";
+    private String photo = "";
+    private String surname = "";
 
     public String getEmail() {
         return email;
@@ -22,6 +25,14 @@ public class User {
         this.id = id;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public String getName() {
         return name;
     }
@@ -30,8 +41,24 @@ public class User {
         this.name = name;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
     public String getPassword() {
         return password;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public void setPassword(String password) {

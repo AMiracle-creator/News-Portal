@@ -22,7 +22,7 @@ public class loginServlet extends HttpServlet {
         String name = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        String secondPas = request.getParameter("secpassw");
+//        String secondPas = request.getParameter("secpassw");
 
         User user = new User();
         user.setName(name);

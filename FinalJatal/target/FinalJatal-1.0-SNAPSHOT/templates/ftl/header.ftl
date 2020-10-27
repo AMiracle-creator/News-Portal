@@ -19,8 +19,9 @@
 
             <div class="header__logo">Jatal</div>
             <#if user??>
-                <h1>${user.name}</h1>
-                <a href="#" class="header__auth active" id="logout">
+<#--                <h1>${user.name}</h1>-->
+                <a href="/FinalJatal_war/personalcab"  class="header__auth-text help-text active">Personal cabinet</a>
+                <a href="/FinalJatal_war/logout" class="header__auth active" id="logout">
                     <svg class="header__auth-logo">
                         <use xlink:href="#logout"></use>
                     </svg>

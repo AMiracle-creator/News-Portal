@@ -25,23 +25,23 @@
                     <div class="personal__info-item">
                         <div class="personal__info-inner">
                             <label for="name" class="personal__info-name">Name</label>
-                            <div class="personal__info-fieldname">DmitryItis</div>
+                            <div class="personal__info-fieldname">${user.name}</div>
 
                         </div>
                         <div class="personal__info-inner">
                             <label for="surname" class="personal__info-name">Surname</label>
-                            <div class="personal__info-fieldname">GerDao</div>
+                            <div class="personal__info-fieldname">${user.surname}</div>
                         </div>
                     </div>
 
                     <div class="personal__info-item">
                         <div class="personal__info-inner">
                             <label for="email" class="personal__info-name">Email</label>
-                           <div class="personal__info-fieldname">dmitryDAO@moonchpop.com</div>
+                           <div class="personal__info-fieldname">${user.email}</div>
                         </div>
                         <div class="personal__info-inner">
                             <label for="email" class="personal__info-name">About</label>
-                            <div class="personal__info-text redact__info-text">DMitry love pygame fghjkl
+                            <div class="personal__info-text redact__info-text">${user.info}
                             </div>
                         </div>
                     </div>
