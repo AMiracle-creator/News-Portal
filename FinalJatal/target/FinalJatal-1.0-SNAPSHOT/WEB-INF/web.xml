@@ -188,4 +188,30 @@
         <filter-name>authorizationFilter</filter-name>
         <url-pattern>/authorization</url-pattern>
     </filter-mapping>
+
+    <servlet>
+        <servlet-name>redactProfileServlet</servlet-name>
+        <servlet-class>controller.redactProfileServlet</servlet-class>
+        <init-param>
+            <param-name>uploadDir</param-name>
+            <param-value>C:\Users\agayn\News-Portal\FinalJatal\data</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>redactProfileServlet</servlet-name>
+        <url-pattern>/redact_profile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PhotoServlet</servlet-name>
+        <servlet-class>controller.PhotoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PhotoServlet</servlet-name>
+        <url-pattern>/photo</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

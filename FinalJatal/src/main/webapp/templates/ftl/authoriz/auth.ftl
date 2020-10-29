@@ -14,13 +14,15 @@
             </div>
 
             <div class="auth__item">
-                <label for="name">Email Address or Username</label>
-                <input type="text" id="name" class="auth__email" name="username">
+                <label for="name">Username</label>
+                <input type="text" id="name" class="auth__email" name="username" pattern="^[a-z0-9_-]{4,}" required>
+                <span>Минимум 4 символа</span>
             </div>
 
             <div class="auth__item">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="auth__email" name="password">
+                <input type="password" id="password" class="auth__email" name="password" pattern="^(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{3,}" required>
+                <span>Это поле должно содержать минимум 3 символа</span>
             </div>
 
             <div class="auth__item">

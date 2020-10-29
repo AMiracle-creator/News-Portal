@@ -36,7 +36,7 @@ public class authorizationFilter implements Filter {
                 System.out.println("asd");
                 Cookie cook1 = new Cookie("username",user.getName());
                 Cookie cook2 = new Cookie("password",user.getPassword());
-                Cookie cook3 = new Cookie("id", user.getId().toString());
+                Cookie cook3 = new Cookie("id", String.valueOf(user.getId()));
                 cook1.setMaxAge(60*60*24*7);
                 cook2.setMaxAge(60*60*24*7);
                 cook3.setMaxAge(60*60*24*7);

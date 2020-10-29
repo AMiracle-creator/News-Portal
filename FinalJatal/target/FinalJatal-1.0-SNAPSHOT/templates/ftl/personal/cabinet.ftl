@@ -8,13 +8,10 @@
 
             <#include "cabinet__header.ftl">
 
-            <div class="cabinet__content">
+            <form action="/FinalJatal_war/redact_profile" method="post" enctype="multipart/form-data"  class="cabinet__content">
                 <div class="cabinet__content-header">
                     <div class="profile">
-                        <div class="profile__photo">
-                            <img src="templates/img/posts/authorphoto.jpg" alt="" class="cabin__img">
-                        </div>
-                        <button class="profile__change">Change photo</button>
+                        <input type="file" class="profile__change" name="photo">
                     </div>
 
                     <div class="profile__content-info">
@@ -23,36 +20,36 @@
                     </div>
                 </div>
 
-                <form action="" method="post" class="personal__info">
+                <div class="personal__info">
                     <div class="personal__info-item">
                         <div class="personal__info-inner">
                             <label for="name" class="personal__info-name">Name</label>
-                            <input type="text" class="personal__info-fieldname" id="name">
+                            <input type="text" class="personal__info-fieldname" id="name" name="username">
                         </div>
                         <div class="personal__info-inner">
                             <label for="surname" class="personal__info-name">Surname</label>
-                            <input type="text" class="personal__info-fieldname" id="surname">
+                            <input type="text" class="personal__info-fieldname" id="surname" name="surname">
                         </div>
                     </div>
 
                     <div class="personal__info-item">
                         <div class="personal__info-inner">
                             <label for="email" class="personal__info-name">Email</label>
-                            <input type="email" class="personal__info-fieldname" id="email">
+                            <input type="email" class="personal__info-fieldname" id="email" name="surname">
                         </div>
                         <div class="personal__info-inner">
                             <label for="email" class="personal__info-name">About</label>
-                            <textarea type="text" class="personal__info-text" id="text"></textarea>
+                            <textarea type="text" class="personal__info-text" id="text" name="info"></textarea>
                         </div>
                     </div>
 
                     <div class="btn-pers">
-                        <button type="button" class="personal__save">Save</button>
+                        <button type="submit" class="personal__save">Save</button>
                     </div>
 
-                </form>
+                </div>
 
-            </div>
+            </form>
         </div>
     </div>
 </div>

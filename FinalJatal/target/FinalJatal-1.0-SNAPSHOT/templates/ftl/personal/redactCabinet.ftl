@@ -11,7 +11,7 @@
                 <div class="cabinet__content-header">
                     <div class="profile">
                         <div class="profile__photo">
-                            <img src="templates/img/posts/authorphoto.jpg" alt="" class="cabin__img">
+                            <img src="/FinalJatal_war/photo?fileName=${user.photo}" alt="" class="cabin__img">
                         </div>
                     </div>
 
@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <form action="" method="post" class="personal__info">
+                <form action="/FinalJatal_war/redact_profile" method="get" class="personal__info">
                     <div class="personal__info-item">
                         <div class="personal__info-inner">
                             <label for="name" class="personal__info-name">Name</label>
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="btn-pers">
-                        <button type="button" class="personal__save">Редактировать</button>
+                        <button type="submit" class="personal__save">Редактировать</button>
                     </div>
 
                 </form>

@@ -9,7 +9,7 @@ public class logoutServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Cookie[] cookies = req.getCookies();
-
+        System.out.println(cookies.length);
         if (cookies != null){
             for (Cookie cookie : cookies) {
                 cookie.setValue("");
