@@ -8,13 +8,31 @@ public class Post {
     private String text;
     private int author_id;
     private String date;
+    private int likes;
+    private int views;
 
     public int getAuthor_id() {
         return author_id;
     }
 
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
+    }
+
     public String getDate() {
         return date;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
     public void setDate(String date) {

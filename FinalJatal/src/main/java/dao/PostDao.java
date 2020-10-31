@@ -164,6 +164,8 @@ public class PostDao {
                 //String image = resultSet.getString("image");
                 int author_id = resultSet.getInt("author_id");
                 String date = resultSet.getString("date");
+                int likes = resultSet.getInt("likes");
+                int views = resultSet.getInt("views");
 
                 Post post = new Post();
                 post.setId(post_id);
@@ -173,6 +175,8 @@ public class PostDao {
                 post.setText(text);
                 post.setAuthor_id(author_id);
                 post.setDate(date);
+                post.setLikes(likes);
+                post.setViews(views + 1);
 
                 posts.add(post);
             }
@@ -180,5 +184,62 @@ public class PostDao {
             throwables.printStackTrace();
         }
         return posts;
+    }
+
+    public String updateViews(int id) {
+        Connection con = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            con = DBConnection.createConnection();
+            String query = "UPDATE post SET views = views + 1 where post_id =" + id;
+            statement = con.createStatement();
+
+            int i = statement.executeUpdate(query);
+
+            if (i != 0) {
+                statement.close();
+                con.close();
+                return "SUCCESS";
+            }
+            statement.close();
+            con.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+          return "Error massage";
+    }
+
+    public void addLike(Integer post_id, Integer user_id) throws SQLException {
+        boolean flag = true;
+        Connection con1 = DBConnection.createConnection();
+        PreparedStatement preparedStatement = con1.prepareStatement("select user_id , post_id " +
+                "from likes where post_id =?");
+        preparedStatement.setInt(1, post_id);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            if (resultSet.getInt("user_id") == user_id) {
+                flag = false;
+                break;
+            }
+        }
+
+        if (flag) {
+            try {
+                Connection con = DBConnection.createConnection();
+                PreparedStatement statement2 = con.prepareStatement("insert into likes(user_id,post_id) values(?,?)");
+                statement2.setInt(1, user_id);
+                statement2.setInt(2, post_id);
+                statement2.executeLargeUpdate();
+                Connection con2 = DBConnection.createConnection();
+                PreparedStatement ps = con2.prepareStatement("update post set likes = likes + 1  where id =?");
+                ps.executeUpdate();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        } else {
+            throw new SQLException();
+        }
     }
 }
