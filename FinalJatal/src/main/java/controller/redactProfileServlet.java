@@ -35,37 +35,48 @@ public class redactProfileServlet extends HttpServlet {
         String img = "";
 
         if (fileName.length() > 1) {
+            System.out.println("DmitryItis");
            String uploadDir = getServletConfig().getInitParameter("uploadDir");
            String imgAddress = uploadDir + File.separator + UUID.randomUUID().toString() +
                    "-" + part.getSubmittedFileName();
+            System.out.println(imgAddress);
             IOUtils.copyLarge(part.getInputStream(), new FileOutputStream(imgAddress));
             img = imgAddress;
         }
+        System.out.println("1 "+user.getName());
 
         if (!img.equals("")){
             user.setPhoto(img);
         }
+        System.out.println("2 "+user.getName());
 
         if (!username.equals("")){
             user.setName(username);
         }
+        System.out.println("3 "+user.getName());
         if (!surname.equals("")){
             user.setSurname(surname);
         }
-        if (!email.equals("")){
-            user.setEmail(email);
-        }
+        System.out.println("4 "+user.getName());
+
+        System.out.println("5 "+user.getName());
         if (!info.equals("")){
             user.setInfo(info);
         }
+        System.out.println("6 "+user.getName());
+
+        System.out.println(user.getPhoto());
+        if (!email.equals("")){
+            user.setEmail(email);
+        }
 
         String redactUser = ProfileDao.editProfile(user);
-        req.setAttribute("error_email", "");
+//        req.setAttribute("error_email", "");
 
         if (redactUser.equals("SUCCESS")) {
             System.out.println("ya tut");
             req.setAttribute("user", user);
-            resp.sendRedirect("/FinalJatal/personalcab");
+            resp.sendRedirect("/FinalJatal_war/personalcab");
         }
 
 //        req.getRequestDispatcher("templates/redactCabinet.ftl").forward(req, resp);

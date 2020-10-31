@@ -19,7 +19,7 @@
 
 <#--<%--Intro--%>-->
 <#--<%@include file="jsps/intro.jsp"%>-->
-<#include "ftl/intro.ftl">
+<#--<#include "ftl/intro.ftl">-->
 
 <#--<%--SinglePost--%>-->
 <#--<%@include file="jsps/single/singpost.jsp"%>-->

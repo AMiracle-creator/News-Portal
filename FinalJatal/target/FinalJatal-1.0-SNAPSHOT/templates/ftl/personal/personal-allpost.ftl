@@ -21,25 +21,20 @@
                 </div>
 
                 <div class="pers__allpost-inner">
-                    <a href="#" class="allpost__item">
-                        <div class="allpost__title">What Keeps Us Going: Find Your Way and Motivation in Life</div>
-                        <button type="button" class="allpost__btn">Delete</button>
-                    </a>
-
-                    <a href="#" class="allpost__item">
-                        <div class="allpost__title">What Keeps Us Going: Find Your Way and Motivation in Life</div>
-                        <button type="button" class="allpost__btn">Delete</button>
-                    </a>
-
-                    <a href="#" class="allpost__item">
-                        <div class="allpost__title">What Keeps Us Going: Find Your Way and Motivation in Life</div>
-                        <button type="button" class="allpost__btn">Delete</button>
-                    </a>
-
-                    <a href="#" class="allpost__item">
-                        <div class="allpost__title">What Keeps Us Going: Find Your Way and Motivation in Life</div>
-                        <button type="button" class="allpost__btn">Delete</button>
-                    </a>
+                    <#macro macros posts>
+                        <#list posts as post>
+                        <div class="allpost__item">
+                            <a href="/FinalJatal_war/post?id=${post.id}" class="allpost__title">${post.title}</a>
+                            <a href="/FinalJatal_war/delete?id=${post.id}">
+                                <button type="submit" class="allpost__btn">Delete</button>
+                            </a>
+                        </div>
+                        </#list>
+                    </#macro>
+                    <@macros posts = posts/>
+<#--                    <#list posts as post>-->
+<#--                        <@macros title = posts/>-->
+<#--                    </#list>-->
                 </div>
 
                 <div class="allpost__pagination">

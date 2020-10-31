@@ -35,7 +35,7 @@
                     <div class="personal__info-item">
                         <div class="personal__info-inner">
                             <label for="email" class="personal__info-name">Email</label>
-                            <input type="email" class="personal__info-fieldname" id="email" name="surname">
+                            <input type="email" class="personal__info-fieldname" id="email" name="email ">
                         </div>
                         <div class="personal__info-inner">
                             <label for="email" class="personal__info-name">About</label>

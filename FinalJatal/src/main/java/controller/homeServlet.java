@@ -49,4 +49,9 @@ public class homeServlet extends HttpServlet {
         }
         req.getRequestDispatcher("templates/index.ftl").forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("templates/index.ftl").forward(req,resp);
+    }
 }

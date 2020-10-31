@@ -11,7 +11,8 @@
                 <div class="cabinet__content-header">
                     <div class="profile">
                         <div class="profile__photo">
-                            <img src="/FinalJatal_war/photo?fileName=${user.photo}" alt="" class="cabin__img">
+<#--                            /FinalJatal_war/photo?fileName=${user.photo}-->
+                            <img src="/FinalJatal_war/photo" alt="" class="cabin__img" >
                         </div>
                     </div>
 

@@ -1,13 +1,16 @@
 package controller;
 
-import dao.WritePostDao;
+import dao.PostDao;
 import model.Post;
+import model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class writePostServlet extends HttpServlet {
     @Override
@@ -21,14 +24,22 @@ public class writePostServlet extends HttpServlet {
         String topic = req.getParameter("topic");
         String tag = req.getParameter("tag");
         String text = req.getParameter("text");
-        System.out.println(title);
-        System.out.println(topic);
-        System.out.println(tag);
-        System.out.println(text);
+        User user = (User) req.getSession().getAttribute("user");
+        int author_id = user.getId();
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String postDate = format.format(date);
 
-        Post post = new Post(title, topic, tag, text);
-        WritePostDao writePostDao = new WritePostDao();
-        String postWrited = writePostDao.createPost(post);
+        Post post = new Post();
+        post.setTitle(title);
+        post.setTopic(topic);
+        post.setTag(tag);
+        post.setText(text);
+        post.setAuthor_id(author_id);
+        post.setDate(postDate);
+        PostDao postDao = new PostDao();
+        String postWrited = postDao.createPost(post);
+
 
         if(postWrited.equals("SUCCESS")) {
             System.out.println("yes");

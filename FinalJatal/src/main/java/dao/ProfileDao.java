@@ -18,7 +18,7 @@ public class ProfileDao {
 
         try {
             if (user.getPhoto().equals("")) {
-                String query = "update user set username = ?, email = ?, surname = ?, info = ? where iduser = ?";
+                String query = "update user set name = ?, email = ?, surname = ?, info = ? where user_id = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(query);
                 preparedStatement.setString(1, name);
                 preparedStatement.setString(2, email);
@@ -35,7 +35,7 @@ public class ProfileDao {
                 }
             }
             else {
-                String query = "update user set username = ?, email = ?, surname = ?, info = ?, img = ? where iduser = ?";
+                String query = "update user set name = ?, email = ?, surname = ?, info = ?, photo = ? where user_id = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(query);
                 preparedStatement.setString(1, name);
                 preparedStatement.setString(2, email);

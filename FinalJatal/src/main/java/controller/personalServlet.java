@@ -18,11 +18,15 @@ public class personalServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = (User) req.getSession().getAttribute("user");
         int id = user.getId();
+        String photo = "";
         String email = "";
+        String info = "";
+        String surname = "";
 
         Connection con = null;
         Statement statement = null;
         ResultSet resultSet = null;
+
         try {
             con = DBConnection.createConnection();
             statement = con.createStatement();
@@ -30,6 +34,9 @@ public class personalServlet extends HttpServlet {
             while (resultSet.next()) {
                 if (id == resultSet.getInt("user_id")) {
                     email = resultSet.getString("email");
+                    photo = resultSet.getString("photo");
+                    info = resultSet.getString("info");
+                    surname = resultSet.getString("surname");
                 }
             }
         }
@@ -38,6 +45,9 @@ public class personalServlet extends HttpServlet {
         }
 
         user.setEmail(email);
+        user.setInfo(info);
+        user.setPhoto(photo);
+        user.setSurname(surname);
         req.getSession().setAttribute("user", user);
         req.setAttribute("user", user);
 

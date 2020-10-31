@@ -1,16 +1,36 @@
 package model;
 
 public class Post {
+    private int id;
     private String title;
     private String topic;
     private String tag;
     private String text;
+    private int author_id;
+    private String date;
 
-    public Post(String title, String topic, String tag, String text) {
-        this.title = title;
-        this.topic = topic;
-        this.tag = tag;
-        this.text = text;
+    public int getAuthor_id() {
+        return author_id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setAuthor_id(int author_id) {
+        this.author_id = author_id;
     }
 
     public String getTitle() {
