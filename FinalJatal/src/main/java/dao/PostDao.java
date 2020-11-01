@@ -1,6 +1,5 @@
 package dao;
 
-import javafx.geometry.Pos;
 import model.Post;
 import utility.DBConnection;
 
@@ -16,12 +15,13 @@ public class PostDao {
         String text = post.getText();
         String date = post.getDate();
         int author_id = post.getAuthor_id();
+        String photo = post.getPhoto();
 
         Connection con = null;
         PreparedStatement preparedStatement = null;
         try {
             con = DBConnection.createConnection();
-            String query = "insert into post(title, topic, tag, text, author_id, date) values (?,?,?,?,?,?)";
+            String query = "insert into post(title, topic, tag, text, author_id, date, photo) values (?,?,?,?,?,?,?)";
             preparedStatement = con.prepareStatement(query);
             preparedStatement.setString(1, title);
             preparedStatement.setString(2, topic);
@@ -29,6 +29,7 @@ public class PostDao {
             preparedStatement.setString(4, text);
             preparedStatement.setString(5, String.valueOf(author_id));
             preparedStatement.setString(6, date);
+            preparedStatement.setString(7, photo);
 
             int i = preparedStatement.executeUpdate();
 
@@ -60,9 +61,11 @@ public class PostDao {
                 String topic = resultSet.getString("topic");
                 String tag = resultSet.getString("tag");
                 String text = resultSet.getString("text");
-                //String image = resultSet.getString("image");
                 int author_id = resultSet.getInt("author_id");
                 String date = resultSet.getString("date");
+                String photo = resultSet.getString("photo");
+                int likes = resultSet.getInt("likes");
+                int views = resultSet.getInt("views");
 
                 Post post = new Post();
                 post.setId(id);
@@ -72,6 +75,9 @@ public class PostDao {
                 post.setText(text);
                 post.setAuthor_id(author_id);
                 post.setDate(date);
+                post.setPhoto(photo);
+                post.setViews(views);
+                post.setLikes(likes);
 
                 posts.add(post);
             }
@@ -99,9 +105,11 @@ public class PostDao {
                 String topic = resultSet.getString("topic");
                 String tag = resultSet.getString("tag");
                 String text = resultSet.getString("text");
-                //String image = resultSet.getString("image");
                 int author_id = resultSet.getInt("author_id");
                 String date = resultSet.getString("date");
+                String photo = resultSet.getString("photo");
+                int likes = resultSet.getInt("likes");
+                int views = resultSet.getInt("views");
 
                 Post post = new Post();
                 post.setId(post_id);
@@ -111,6 +119,9 @@ public class PostDao {
                 post.setText(text);
                 post.setAuthor_id(author_id);
                 post.setDate(date);
+                post.setPhoto(photo);
+                post.setViews(views);
+                post.setLikes(likes);
 
                 posts.add(post);
             }
@@ -161,11 +172,12 @@ public class PostDao {
                 String topic = resultSet.getString("topic");
                 String tag = resultSet.getString("tag");
                 String text = resultSet.getString("text");
-                //String image = resultSet.getString("image");
                 int author_id = resultSet.getInt("author_id");
                 String date = resultSet.getString("date");
+                String photo = resultSet.getString("photo");
                 int likes = resultSet.getInt("likes");
                 int views = resultSet.getInt("views");
+
 
                 Post post = new Post();
                 post.setId(post_id);
@@ -176,7 +188,10 @@ public class PostDao {
                 post.setAuthor_id(author_id);
                 post.setDate(date);
                 post.setLikes(likes);
-                post.setViews(views + 1);
+                post.setViews(views);
+                post.setPhoto(photo);
+                post.setViews(views);
+                post.setLikes(likes);
 
                 posts.add(post);
             }
@@ -214,8 +229,7 @@ public class PostDao {
     public void addLike(Integer post_id, Integer user_id) throws SQLException {
         boolean flag = true;
         Connection con1 = DBConnection.createConnection();
-        PreparedStatement preparedStatement = con1.prepareStatement("select user_id , post_id " +
-                "from likes where post_id =?");
+        PreparedStatement preparedStatement = con1.prepareStatement("select user_id , post_id from likes where post_id =?");
         preparedStatement.setInt(1, post_id);
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
@@ -241,5 +255,137 @@ public class PostDao {
         } else {
             throw new SQLException();
         }
+    }
+
+    public ArrayList<Post> getPopularPosts() {
+        ArrayList<Post> posts = new ArrayList<>();
+        Connection con = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            con = DBConnection.createConnection();
+            String query = "select * from post order by views DESC limit 2";
+            statement = con.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("post_id");
+                String title = resultSet.getString("title");
+                String topic = resultSet.getString("topic");
+                String tag = resultSet.getString("tag");
+                String text = resultSet.getString("text");
+                int author_id = resultSet.getInt("author_id");
+                String date = resultSet.getString("date");
+                String photo = resultSet.getString("photo");
+                int likes = resultSet.getInt("likes");
+                int views = resultSet.getInt("views");
+
+                Post post = new Post();
+                post.setId(id);
+                post.setTitle(title);
+                post.setTopic(topic);
+                post.setTag(tag);
+                post.setText(text);
+                post.setAuthor_id(author_id);
+                post.setDate(date);
+                post.setPhoto(photo);
+                post.setViews(views);
+                post.setLikes(likes);
+
+                posts.add(post);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return posts;
+    }
+
+    public ArrayList<Post> getTrendingPosts() {
+        ArrayList<Post> posts = new ArrayList<>();
+        Connection con = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            con = DBConnection.createConnection();
+            String query = "select * from post order by likes DESC limit 5";
+            statement = con.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("post_id");
+                String title = resultSet.getString("title");
+                String topic = resultSet.getString("topic");
+                String tag = resultSet.getString("tag");
+                String text = resultSet.getString("text");
+                int author_id = resultSet.getInt("author_id");
+                String date = resultSet.getString("date");
+                String photo = resultSet.getString("photo");
+                int likes = resultSet.getInt("likes");
+                int views = resultSet.getInt("views");
+
+                Post post = new Post();
+                post.setId(id);
+                post.setTitle(title);
+                post.setTopic(topic);
+                post.setTag(tag);
+                post.setText(text);
+                post.setAuthor_id(author_id);
+                post.setDate(date);
+                post.setPhoto(photo);
+                post.setViews(views);
+                post.setLikes(likes);
+
+                posts.add(post);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return posts;
+    }
+
+    public ArrayList<Post> getLatestNews() {
+        ArrayList<Post> posts = new ArrayList<>();
+        Connection con = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            con = DBConnection.createConnection();
+            String query = "select * from post order by date DESC limit 3";
+            statement = con.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("post_id");
+                String title = resultSet.getString("title");
+                String topic = resultSet.getString("topic");
+                String tag = resultSet.getString("tag");
+                String text = resultSet.getString("text");
+                int author_id = resultSet.getInt("author_id");
+                String date = resultSet.getString("date");
+                String photo = resultSet.getString("photo");
+                int likes = resultSet.getInt("likes");
+                int views = resultSet.getInt("views");
+
+                Post post = new Post();
+                post.setId(id);
+                post.setTitle(title);
+                post.setTopic(topic);
+                post.setTag(tag);
+                post.setText(text);
+                post.setAuthor_id(author_id);
+                post.setDate(date);
+                post.setPhoto(photo);
+                post.setViews(views);
+                post.setLikes(likes);
+
+                posts.add(post);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return posts;
     }
 }

@@ -1,7 +1,12 @@
-controller\registrationServlet.class
 controller\loginServlet.class
 utility\DBConnection.class
+dao\CommentDao.class
+controller\registrationServlet.class
 dao\RegisterDao.class
-dao\LoginDao.class
 controller\logoutServlet.class
+dao\ProfileDao.class
 model\User.class
+utility\BoyerMoore.class
+controller\allpostsServlet.class
+dao\LoginDao.class
+model\Comment.class

@@ -3,9 +3,7 @@ package dao;
 import model.User;
 import utility.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ProfileDao {
     public static String editProfile(User user) {
@@ -55,5 +53,23 @@ public class ProfileDao {
             throwables.printStackTrace();
         }
         return "";
+    }
+
+    public static User getUserForId(int user_id) {
+        User user = new User();
+        String query = "select * from user where user_id = " + user_id;
+        Connection con = DBConnection.createConnection();
+        try {
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                user.setName(resultSet.getString("username"));
+                user.setSurname(resultSet.getString("surname"));
+            }
+            con.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return user;
     }
 }

@@ -12,7 +12,7 @@
             </div>
 
             <div class="write__inf">
-                <form action="" method="post">
+                <form method="post" enctype="multipart/form-data" action="/FinalJatal_war/writepost">
                     <div class="write__title">
                         <label for="title">Title</label>
                         <input type="text" id="title" class="write__title-field" name="title">
@@ -26,7 +26,7 @@
                                 adjust to the desired size
                             </div>
                             <div class="helper">
-                                <button class="photo__info-btn" type="button">Change photo</button>
+                                <input class="photo__info-btn" type="file" name="photo">Change photo</input>
                             </div>
                         </div>
                     </div>
@@ -34,8 +34,21 @@
                     <div class="write__select">
                         <div class="write__topic">Choose topic</div>
                         <select name="topic" id="selectI" class="select">x
-                            <option value="Alcolol" name="Alcolol">Alcolol</option>
-                            <option value="Pivo" name="Pivo">Pivo</option>
+                            <option value="Sport" name="value">Sport</option>
+                            <option value="Politics" name="value">Politics</option>
+                            <option value="Travel" name="value">Travel</option>
+                            <option value="Scientific populism" name="value">Scientific populism</option>
+                            <option value="Marketing" name="value">Marketing</option>
+                            <option value="Weather" name="value">Weather</option>
+                            <option value="Rest" name="value">Rest</option>
+                            <option value="Health" name="value">Health</option>
+                            <option value="About people" name="value">About people</option>
+                            <option value="Business" name="value">Business</option>
+                            <option value="Books" name="value">Books</option>
+                            <option value="Programming" name="value">Programming</option>
+                            <option value="Shops" name="value">Shops</option>
+                            <option value="News" name="value">News</option>
+                            <option value="Technologies" name="value">Technologies</option>
                         </select>
 
                         <div class="write__tag">Choose tag</div>
@@ -44,8 +57,18 @@
                             your article
                         </div>
                         <select name="tag" id="selectId" class="select">
-                            <option value="Alcolol" name="Alcolol">Alcolol</option>
-                            <option value="Pivo" name="Pivo">Pivo</option>
+                            <option value="Cars" name="tags">Cars</option>
+                            <option value="Weather2020" name="tags">Weather2020</option>
+                            <option value="Programs" name="tags">Programs</option>
+                            <option value="Landscapes" name="tags">Landscapes</option>
+                            <option value="Places" name="tags">Places</option>
+                            <option value="Attractions" name="tags">Attractions</option>
+                            <option value="Myths" name="tags">Myths</option>
+                            <option value="Legends" name="tags">Legends</option>
+                            <option value="Stories" name="tags">Stories</option>
+                            <option value="Сonversations" name="tags">Сonversations</option>
+                            <option value="Stars" name="tags">Stars</option>
+                            <option value="Interview" name="tags">Interview</option>
                         </select>
                     </div>
 
@@ -54,9 +77,9 @@
                         <textarea class="write__tex" name="text" id="text" cols="30" rows="10"></textarea>
                     </div>
 
-                    <form class="write__post" method="post" action="/FinalJatal_war/writepost">
+                    <div class="write__post">
                         <button class="write__btn" type="submit">Send Post</button>
-                    </form>
+                    </div>
                 </form>
             </div>
         </div>

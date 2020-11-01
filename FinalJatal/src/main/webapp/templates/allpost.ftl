@@ -8,7 +8,7 @@
 <body>
 <#--<%--Preloader--%>-->
 <#--<%@include file="jsps/preloader.jsp"%>-->
-<#include "ftl/preloader.ftl">
+<#--<#include "ftl/preloader.ftl">-->
 
 <#--<%@include file="sprite/sprite.html"%>-->
 <#include "sprite/sprite.html">
@@ -30,6 +30,9 @@
 
 <script>
    <#include "js/app.js">
+</script>
+<script>
+   <#include "js/autocomplete.js">
 </script>
 </body>
 </html>

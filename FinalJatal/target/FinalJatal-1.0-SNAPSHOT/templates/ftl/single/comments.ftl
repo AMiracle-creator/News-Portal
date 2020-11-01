@@ -2,107 +2,26 @@
     <div class="comments__title">Comments</div>
 
     <div class="comments__content">
+<#--        <#list comments as coment>-->
+<#--            <div class="comments__item">-->
+<#--                <div class="comments__info">-->
+<#--                    <div class="comments__name">-->
+<#--                        ${coment.user.name} ${coment.user.surname}-->
+<#--                    </div>-->
 
-        <div class="comments__item">
-            <div class="comments__photo">
-                <img src="img/comments/prof.jpeg" alt="" class="comments__img">
-            </div>
+<#--                    <div class="commemts__date">${coment.date}</div>-->
 
-            <div class="comments__info">
-                <div class="comments__name">
-                    Roman Leontiev
-                </div>
+<#--                    <div class="comments__text">${coment.text}-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--            </div>-->
+<#--        </#list>-->
 
-                <div class="commemts__date">November 01.2020 12:45</div>
-
-                <div class="comments__text">bmrfbmdfvddlNullam eget tincidunt dolor, at accumsan odio. Morbi eget ligula
-                    gravida,
-                    pulvinar magna eget, eleifend mi. Proinfdghkjkmllvmflvdvmldfmvdvdlvdlvdlvmdvmmvdovdmvodvmmdvdmvodmv
-                    eefdghjk
-                    gsdgsdgsdgsgsgsdgsdggsdggs
-                </div>
-                <div class="comments__reply">
-                    <button type="button" class="comments__reply-btn" data-toggle="modal" data-target="#staticBackdrop">
-                        Reply
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="comments__item">
-            <div class="comments__photo">
-                <img src="img/comments/prof.jpeg" alt="" class="comments__img">
-            </div>
-
-            <div class="comments__info">
-                <div class="comments__name">
-                    Roman Leontiev
-                </div>
-
-                <div class="commemts__date">November 01.2020 12:45</div>
-
-                <div class="comments__text">bmrfbmdfvddlNullam eget tincidunt dolor, at accumsan odio. Morbi eget ligula
-                    gravida, pulvinar magna eget, eleifend mi. Proinfdghkjkmllvmflvdvmldfmvdvdlvdlvdlvmdvmmvdovdmvodvmmdvdmvodmv eefdghjk gsdgsdgsdgsgsgsdgsdggsdggs
-                </div>
-                <div class="comments__reply">
-                    <button type="button" class="comments__reply-btn" data-toggle="modal" data-target="#staticBackdrop">
-                        Reply
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="comments__item act">
-            <div class="comments__photo">
-                <img src="img/comments/prof.jpeg" alt="" class="comments__img">
-            </div>
-
-            <div class="comments__info">
-                <div class="comments__name">
-                    Roman Leontiev
-                </div>
-
-                <div class="commemts__date">November 01.2020 12:45</div>
-
-                <div class="comments__text">bmrfbmdfvddlNullam eget tincidunt dolor, at accumsan odio. Morbi eget ligula
-                    gravida, pulvinar magna eget, eleifend mi. Proinfdghkjkmllvmflvdvmldfmvdvdlvdlvdlvmdvmmvdovdmvodvmmdvdmvodmv eefdghjk gsdgsdgsdgsgsgsdgsdggsdggs
-                </div>
-                <div class="comments__reply">
-                    <button type="button" class="comments__reply-btn">Reply</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="comments__item">
-            <div class="comments__photo">
-                <img src="img/comments/prof.jpeg" alt="" class="comments__img">
-            </div>
-
-            <div class="comments__info">
-                <div class="comments__name">
-                    Roman Leontiev
-                </div>
-
-                <div class="commemts__date">November 01.2020 12:45</div>
-
-                <div class="comments__text">bmrfbmdfvddlNullam eget tincidunt dolor, at accumsan odio. Morbi eget ligula
-                    gravida, pulvinar magna eget, eleifend mi.
-                    Proinfdghkjkmllvmflvdvmldfmvdvdlvdlvdlvmdvmmvdovdmvodvmmdvdmvodmv eefdghjk
-                    gsdgsdgsdgsgsgsdgsdggsdggs
-                </div>
-                <div class="comments__reply">
-                    <button type="button" class="comments__reply-btn" data-toggle="modal" data-target="#staticBackdrop">
-                        Reply
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <#include "modal.ftl">
+<#--        <#include "modal.ftl">-->
 
     </div>
 
-    <form method="post" class="comments__post">
+    <form method="post" action="/FinalJatal_war/comment" class="comments__post">
         <div class="comments__post-title">Write comments</div>
 
         <div class="comments__post-redactor">

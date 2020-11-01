@@ -12,7 +12,7 @@
                     <div class="profile">
                         <div class="profile__photo">
 <#--                            /FinalJatal_war/photo?fileName=${user.photo}-->
-                            <img src="/FinalJatal_war/photo" alt="" class="cabin__img" >
+                            <img src="/FinalJatal_war/photo?fileName=${user.photo}" alt="" class="cabin__img" >
                         </div>
                     </div>
 

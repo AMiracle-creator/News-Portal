@@ -10,9 +10,27 @@ public class Post {
     private String date;
     private int likes;
     private int views;
+    private String photo;
+    private User author;
 
     public int getAuthor_id() {
         return author_id;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public int getViews() {

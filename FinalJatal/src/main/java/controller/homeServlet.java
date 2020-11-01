@@ -1,6 +1,8 @@
 package controller;
 
 import dao.LoginDao;
+import dao.PostDao;
+import model.Post;
 import model.User;
 
 
@@ -10,14 +12,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class homeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        PostDao postDao = new PostDao();
+
+        ArrayList<Post> popularPosts = postDao.getPopularPosts();
+        req.setAttribute("popularPosts", popularPosts);
+
+        ArrayList<Post> latestPosts = postDao.getLatestNews();
+        req.setAttribute("latestPosts", latestPosts);
+
+        ArrayList<Post> trendingPosts = postDao.getTrendingPosts();
+        req.setAttribute("trendingPosts", trendingPosts);
+
         Cookie[] cookies = req.getCookies();
-        System.out.println(cookies.length);
-        System.out.println(cookies[0].getValue());
-        System.out.println(cookies[1].getValue());
         if (cookies == null ||cookies.length <= 3) {
             req.setAttribute("user", null);
             req.getRequestDispatcher("templates/index.ftl").forward(req, resp);
@@ -47,6 +59,7 @@ public class homeServlet extends HttpServlet {
             req.getSession().setAttribute("user", user);
             req.setAttribute("user", user);
         }
+
         req.getRequestDispatcher("templates/index.ftl").forward(req, resp);
     }
 

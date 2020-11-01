@@ -2,6 +2,7 @@ package dao;
 
 import model.User;
 import utility.DBConnection;
+import utility.Hashing;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +13,7 @@ import java.sql.SQLException;
 public class RegisterDao {
     public String registerUser(User user) {
         String name = user.getName();
-        String password = user.getPassword();
+        String password = Hashing.md5Custom(user.getPassword());
         String email = user.getEmail();
 
         Connection con = null;

@@ -105,6 +105,10 @@
     <servlet>
         <servlet-name>allpostsServlet</servlet-name>
         <servlet-class>controller.allpostsServlet</servlet-class>
+        <init-param>
+            <param-name>uploadDir</param-name>
+            <param-value>C:\Users\agayn\News-Portal\FinalJatal\src\main\webapp\templates\data</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
@@ -156,6 +160,10 @@
     <servlet>
         <servlet-name>writePostServlet</servlet-name>
         <servlet-class>controller.writePostServlet</servlet-class>
+        <init-param>
+            <param-name>uploadDir</param-name>
+            <param-value>C:\Users\agayn\News-Portal\FinalJatal\src\main\webapp\templates\data</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
@@ -198,7 +206,7 @@
         <servlet-class>controller.redactProfileServlet</servlet-class>
         <init-param>
             <param-name>uploadDir</param-name>
-            <param-value>C:\Users\agayn\News-Portal\FinalJatal\data</param-value>
+            <param-value>C:\Users\agayn\News-Portal\FinalJatal\src\main\webapp\templates\data</param-value>
         </init-param>
     </servlet>
 
@@ -235,6 +243,16 @@
     <servlet-mapping>
         <servlet-name>PostServlet</servlet-name>
         <url-pattern>/post</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CommentsServlet</servlet-name>
+        <servlet-class>controller.CommentsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CommentsServlet</servlet-name>
+        <url-pattern>/comments</url-pattern>
     </servlet-mapping>
 
 

@@ -25,7 +25,7 @@ public class authorizationFilter implements Filter {
 
         User user = new User();
         user.setName(name);
-        user.setPassword(password);
+        user.setPassword(Hashing.md5Custom(password));
         LoginDao loginDao = new LoginDao();
         user = loginDao.authenticateUser(user);
 

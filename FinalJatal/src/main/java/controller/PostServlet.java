@@ -21,6 +21,7 @@ public class PostServlet extends HttpServlet {
         ArrayList<Post> posts = postDao.getPost(post_id);
         System.out.println(posts);
         req.setAttribute("posts", posts);
+        req.setAttribute("user",req.getSession().getAttribute("user"));
 
         req.getRequestDispatcher("templates/singlepost.ftl").forward(req,resp);
     }
@@ -34,7 +35,7 @@ public class PostServlet extends HttpServlet {
         try {
             postDao.addLike(post_id, user_id);
             req.setAttribute("errMsg",null);
-            req.getRequestDispatcher("templates/singlepost.ftl").forward(req,resp);
+            resp.sendRedirect("/FinalJatal/post?id="+post_id);
         }
         catch (SQLException e){
             req.setAttribute("errMsg","Вы уже оставляли лайк");

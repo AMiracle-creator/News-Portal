@@ -5,9 +5,9 @@ public class User {
     private String name;
     private String password;
     private String email;
-    private String info = "";
-    private String photo = "";
-    private String surname = "";
+    private String info;
+    private String photo;
+    private String surname;
 
     public String getEmail() {
         return email;

@@ -31,7 +31,7 @@
                         </div>
                         </#list>
                     </#macro>
-                    <@macros posts = posts/>
+                    <@macros posts=posts/>
 <#--                    <#list posts as post>-->
 <#--                        <@macros title = posts/>-->
 <#--                    </#list>-->
